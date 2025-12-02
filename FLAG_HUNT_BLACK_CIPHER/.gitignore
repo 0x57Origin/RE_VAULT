@@ -1,0 +1,21 @@
+# Solutions file - keep private
+SOLUTIONS.md
+
+# Compiled binary
+flaghunt2
+
+# Object files
+*.o
+
+# Backup files
+*~
+*.swp
+*.tmp
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
