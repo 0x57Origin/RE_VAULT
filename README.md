@@ -2,7 +2,7 @@
 
 A collection of my reverse-engineering projects, custom binary challenges, and low-level experimentation.
 
-This repository serves as my long-term archive for everything I build in the RE space—binaries, obfuscation experiments, VM designs, and fully custom challenge sets.
+This repository serves as my long-term archive for everything I build in the RE space - binaries, obfuscation experiments, VM designs, and fully custom challenge sets.
 
 ## **Current Projects**
 
