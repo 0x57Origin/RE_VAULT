@@ -43,14 +43,5 @@ Planned additions include:
 
 The repository will grow as I continue developing more complex challenges.
 
-## **Need the Solutions?**
 
-The repository does **not** contain answer keys or walkthroughs.
-If you need the official solutions for educational or verification purposes, you can request them by email:
-
-**[0x57Origin@proton.me](mailto:0x57Origin@proton.me)**
-
-Solutions are provided privately on request.
-
-Just tell me.
 
