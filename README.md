@@ -3,7 +3,7 @@
 
 A collection of my reverse-engineering projects, custom binary challenges, and low-level experiments.
 
-This repo is where I store everything I build as I learn reverse engineering — C and C++ binaries, obfuscation tests, small VMs, and future malware-analysis practice programs.
+This repo is where I store everything I build as I learn reverse engineering - C and C++ binaries, obfuscation tests, small VMs, and future malware-analysis practice programs.
 
 ---
 
