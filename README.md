@@ -1,47 +1,54 @@
+
 # **RE_VAULT**
 
-A collection of my reverse-engineering projects, custom binary challenges, and low-level experimentation.
+A collection of my reverse-engineering projects, custom binary challenges, and low-level experiments.
 
-This repository serves as my long-term archive for everything I build in the RE space - binaries, obfuscation experiments, VM designs, and fully custom challenge sets.
+This repo is where I store everything I build as I learn reverse engineering — C and C++ binaries, obfuscation tests, small VMs, and future malware-analysis practice programs.
 
-## **Current Projects**
+---
 
-### **Black Cipher – Flag Hunt Series**
+# **Current Projects**
 
-An advanced reverse-engineering challenge written in C, featuring:
+## **Black Cipher – Flag Hunt Series**
 
-* custom bytecode VM
-* hostile control flow
+A custom reverse-engineering challenge written in C, featuring:
+
+* simple custom VM logic
 * encrypted data sections
-* multi-stage hashing logic
-* memory-based artifacts
-* protocol decoding puzzles
+* hashing puzzles
+* control-flow tricks
 
-More challenges in this series will be added over time as the complexity grows.
+More Black Cipher challenges will be added over time as the series grows.
 
-## **Purpose of This Repository**
+---
 
-RE_VAULT contains:
+# **What This Repository Contains**
 
-* reverse-engineering challenges I build
-* binary analysis experiments
-* obfuscation and anti-debug research
-* C-based RE puzzles
-* long-term low-level development artifacts
+* the Black Cipher challenge series
+* C and C++ binary experiments
+* basic obfuscation tests
+* beginner anti-debug ideas
+* VM and bytecode experiments
+* future malware-style binaries for safe analysis practice
 
-It is an expanding vault of ongoing work.
+This repo basically holds anything low-level I build while learning.
 
-## **Future Additions**
+---
 
-Planned additions include:
+# **Future Additions**
 
-* new Black Cipher modules
-* malware-style VM experiments
-* advanced obfuscation research binaries
-* multi-layer puzzle executables
-* interactive RE labs
+Planned additions:
 
-The repository will grow as I continue developing more complex challenges.
+* more Black Cipher levels
+* basic malware-simulation binaries (for RE practice only)
+* more C/C++ challenges
+* simple packer/unpacker projects
+* cleaner VM designs
+* more RE labs as I progress
+
+The goal is for RE_VAULT to grow into a long-term archive of everything I learn in reverse engineering.
+
+
 
 
 
