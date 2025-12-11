@@ -1,127 +1,70 @@
 # Phantom-Persistence
 
-An educational Linux malware sample demonstrating Advanced Persistent Threat (APT) techniques used by nation-state actors. This project includes both the malware implant and complete reverse engineering analysis.
+Linux persistence malware for educational analysis.
 
-## Overview
+## What it does
 
-Phantom-Persistence is a Linux persistence implant that demonstrates real-world malware techniques including:
-- Automatic persistence across reboots
-- Command and Control (C2) beacon communication
-- System information exfiltration
-- Anti-debugging and anti-analysis measures
-- String obfuscation to evade detection
+**Implant (`src/implant.c`)**:
+- Copies itself to `/tmp/.system_daemon`
+- Creates cron job to run every 5 minutes
+- Daemonizes (runs in background)
+- Sends system info to C2 server every 10 seconds
+- Basic anti-debugging with ptrace
 
-This project was created for educational purposes to understand how sophisticated malware operates and how to detect and analyze it.
+**C2 Server (`c2-server/c2_server.py`)**:
+- Listens on port 8080
+- Receives beacon data via HTTP GET
+- Logs victim info to `c2_beacons.log`
+- Shows real-time connections
 
-## MITRE ATT&CK Techniques
+## Build and Run
 
-This malware demonstrates the following techniques:
+**Install dependencies:**
+```bash
+sudo apt-get install libcurl4-openssl-dev build-essential
+```
 
-- **T1053.003** - Scheduled Task/Job: Cron (Persistence)
-- **T1071.001** - Application Layer Protocol: Web Protocols (C2 Communication)
-- **T1082** - System Information Discovery
-- **T1041** - Exfiltration Over C2 Channel
-- **T1027** - Obfuscated Files or Information
-- **T1497** - Virtualization/Sandbox Evasion
-- **T1059.004** - Command and Scripting Interpreter: Unix Shell
-
-## Project Components
-
-### Malware Implant (`src/implant.c`)
-The main persistence implant written in C. Includes:
-- Cron-based persistence mechanism
-- HTTP-based C2 beacon
-- System reconnaissance capabilities
-- Basic anti-analysis features
-
-### C2 Server (`c2-server/c2_server.py`)
-Python-based command and control server that:
-- Receives beacon check-ins from infected systems
-- Logs victim information
-- Sends commands to implants
-
-### Analysis Documentation (`analysis/`)
-Complete reverse engineering analysis including:
-- Ghidra walkthrough
-- Static analysis findings
-- Dynamic analysis results
-- Indicators of Compromise (IOCs)
-- YARA rules for detection
-
-## Quick Start
-
-### Building the Implant
+**Build implant:**
 ```bash
 cd src/
 make
 ```
 
-### Running the C2 Server
+**Start C2 server:**
 ```bash
 cd c2-server/
 python3 c2_server.py
 ```
 
-### Testing (Safe Environment Only)
+**Run implant:**
+```bash
+cd src/
+./phantom-implant
+```
 
-See `docs/testing-guide.md` for complete testing instructions in an isolated VM environment.
+## Data collected
 
-## Educational Purpose & Ethics
+- Hostname
+- Username  
+- OS info (`uname -a`)
+- Source IP
+- Timestamps
 
-**WARNING: This is malware. Use only in isolated lab environments.**
+## Files created
 
-This project is created solely for:
-- Learning malware analysis techniques
-- Understanding APT tactics and procedures
-- Practicing reverse engineering skills
-- Improving defensive security capabilities
+- `/tmp/.system_daemon` - Copied implant
+- Cron entry: `*/5 * * * * /tmp/.system_daemon >/dev/null 2>&1`
+- `c2_beacons.log` - Beacon log file
 
-**Never deploy this on systems you do not own or have explicit permission to test.**
+## Clean up
 
-## Skills Demonstrated
+```bash
+# Remove cron job
+crontab -e  # Delete the phantom line manually
 
-- C programming and Linux system programming
-- Understanding of persistence mechanisms
-- Network protocol implementation
-- Reverse engineering and binary analysis
-- Threat intelligence and ATT&CK framework mapping
-- Security documentation and reporting
+# Remove files
+rm -f /tmp/.system_daemon
+rm -f c2_beacons.log
+```
 
-## Analysis Results
-
-For complete analysis, see `analysis/ghidra-analysis.md` which includes:
-- Decompiled code examination
-- String extraction and decoding
-- Control flow analysis
-- IOC identification
-- Detection recommendations
-
-## Detection & Defense
-
-### IOCs (Indicators of Compromise)
-See `analysis/iocs.txt` for complete list including:
-- File hashes
-- Network indicators
-- Persistence mechanisms
-- Behavioral indicators
-
-### Detection Methods
-- Monitor cron job modifications for unusual entries
-- Network traffic analysis for C2 beacons
-- File integrity monitoring on system directories
-- Process behavior analysis
-
-## Author
-
-Mohammad - U.S. Army Veteran transitioning to Federal Cybersecurity
-- Learning malware analysis and reverse engineering
-- Building portfolio!
-- MS in Cybersecurity Technology (in progress)
-
-## Disclaimer
-
-This software is provided for educational and research purposes only. The author is not responsible for any misuse or damage caused by this program. Use only in controlled laboratory environments with proper authorization.
-
----
-
-**This project demonstrates understanding of both offensive techniques (how malware works) and defensive techniques (how to analyze and detect it).**
+**Warning: Use only in isolated lab environments.**
