@@ -1,3 +1,6 @@
+# Project Structure
+
+```
 Phantom-Persistence/
 ├── README.md
 ├── src/
@@ -13,3 +16,4 @@ Phantom-Persistence/
     ├── build-instructions.md
     ├── testing-guide.md
     └── malware-report.md
+```
