@@ -1,62 +1,32 @@
 # RE_VAULT
 
-A collection of reverse-engineering challenges, malware development exercises, and low-level binary experiments. This repository documents my journey into binary analysis, exploit development, and understanding how malicious software works at the assembly level.
+RE_VAULT is a personal reverse engineering and malware analysis lab focused on
+binary analysis, Linux internals, and understanding real-world offensive techniques
+from a defensive and research perspective.
 
-## What This Repository Contains
+## Contents
+- **FLAG_HUNT_BLACK_CIPHER/**  
+  A single CTF-style reverse engineering challenge built in C.  
+  This is the only CTF project in the repository and will remain standalone.
 
-### Reverse Engineering Challenges
-Custom-built binaries designed to teach RE fundamentals:
-- **Black Cipher** - Multi-stage flag hunt with custom VM, encrypted sections, and control-flow obfuscation
-- Additional CTF-style challenges covering various RE concepts
-- Progressive difficulty from beginner to intermediate techniques
+- **Phantom-Persistence/**  
+  Linux malware research project demonstrating persistence concepts,
+  implant structure, and basic C2 communication for analysis purposes.
 
-### Malware Development & Analysis
-Educational malware samples for learning offensive and defensive techniques:
-- Custom malware written in C/C++ demonstrating real-world techniques
-- Complete source code with detailed documentation
-- Corresponding Ghidra/IDA analysis walkthroughs
-- MITRE ATT&CK technique mapping
-- Safe, controlled environment testing only
+## Focus Areas
+- Reverse engineering C binaries
+- Static and dynamic analysis
+- Malware behavior research
+- Persistence mechanisms
+- Obfuscation and anti-analysis concepts
 
-### Low-Level Experiments
-- C/C++ binary manipulation and obfuscation
-- Anti-debugging and anti-analysis techniques
-- Custom VM and bytecode interpreters
-- Packer/unpacker development
-- Shellcode and payload experiments
+## Planned Additions
+- Linux malware samples for analysis
+- Packers and unpacking exercises
+- Obfuscated binaries
+- Reverse engineering notes and tooling experiments
 
-## Purpose & Ethics
-
-**Educational Use Only**: All malware samples are created for learning reverse engineering and malware analysis techniques. This work supports defensive security skills - understanding how attacks work to better defend against them.
-
-**Safe Practice**: All malicious code is clearly labeled, documented, and designed for isolated lab environments only.
-
-## Skills Demonstrated
-
-- C/C++ low-level programming
-- x86/x64 assembly analysis
-- Binary reverse engineering (Ghidra, IDA, GDB)
-- Malware analysis (static and dynamic)
-- Obfuscation and evasion techniques
-- Threat intelligence and ATT&CK mapping
-
-## Current Projects
-
-- Black Cipher challenge series
-- Educational malware sample collection
-- Custom obfuscation techniques
-- Anti-analysis method research
-
-## Future Additions
-
-- Advanced RE challenges with increasing complexity
-- Malware family analysis (ransomware, trojans, rootkits)
-- Exploit development exercises
-- Advanced packing/unpacking techniques
-- Kernel-mode experiments
-- More sophisticated VM designs
-
----
+This repository is a learning vault, not a toolkit.
 
 **Disclaimer**: This repository is for educational and research purposes only. All content is designed to improve defensive security capabilities through understanding offensive techniques.
 
